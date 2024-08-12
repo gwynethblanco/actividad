@@ -1,0 +1,190 @@
+Traceback (most recent call last):
+  File "C:\Users\Usuario\miniconda3\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\Usuario\miniconda3\Lib\site-packages\nbclient\client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\miniconda3\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\miniconda3\Lib\asyncio\base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\miniconda3\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\Usuario\miniconda3\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\Usuario\miniconda3\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from bokeh.io import output_notebook, show
+from bokeh.plotting import figure
+from bokeh.resources import INLINE
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+import matplotlib.cm as cm
+import warnings
+warnings.filterwarnings('ignore')
+output_notebook(resources=INLINE)
+
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mAttributeError[0m                            Traceback (most recent call last)
+Cell [1;32mIn[2], line 1[0m
+[1;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mbokeh[39;00m[38;5;21;01m.[39;00m[38;5;21;01mio[39;00m [38;5;28;01mimport[39;00m output_notebook, show
+[0;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mbokeh[39;00m[38;5;21;01m.[39;00m[38;5;21;01mplotting[39;00m [38;5;28;01mimport[39;00m figure
+[0;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mbokeh[39;00m[38;5;21;01m.[39;00m[38;5;21;01mresources[39;00m [38;5;28;01mimport[39;00m INLINE
+
+File [1;32m~\miniconda3\Lib\site-packages\bokeh\io\__init__.py:24[0m
+[0;32m     17[0m log [38;5;241m=[39m logging[38;5;241m.[39mgetLogger([38;5;18m__name__[39m)
+[0;32m     19[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     20[0m [38;5;66;03m# Imports[39;00m
+[0;32m     21[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     22[0m 
+[0;32m     23[0m [38;5;66;03m# Bokeh imports[39;00m
+[1;32m---> 24[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mdoc[39;00m [38;5;28;01mimport[39;00m curdoc
+[0;32m     25[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mexport[39;00m [38;5;28;01mimport[39;00m export_png, export_svg, export_svgs
+[0;32m     26[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mnotebook[39;00m [38;5;28;01mimport[39;00m install_jupyter_hooks, install_notebook_hook, push_notebook
+
+File [1;32m~\miniconda3\Lib\site-packages\bokeh\io\doc.py:29[0m
+[0;32m     26[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtyping[39;00m [38;5;28;01mimport[39;00m TYPE_CHECKING, Iterator, List
+[0;32m     28[0m [38;5;66;03m# Bokeh imports[39;00m
+[1;32m---> 29[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mstate[39;00m [38;5;28;01mimport[39;00m curstate
+[0;32m     31[0m [38;5;28;01mif[39;00m TYPE_CHECKING:
+[0;32m     32[0m     [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdocument[39;00m [38;5;28;01mimport[39;00m Document
+
+File [1;32m~\miniconda3\Lib\site-packages\bokeh\io\state.py:53[0m
+[0;32m     51[0m [38;5;66;03m# Bokeh imports[39;00m
+[0;32m     52[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtypes[39;00m [38;5;28;01mimport[39;00m PathLike
+[1;32m---> 53[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdocument[39;00m [38;5;28;01mimport[39;00m Document
+[0;32m     54[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01mresources[39;00m [38;5;28;01mimport[39;00m Resources, ResourcesMode
+[0;32m     56[0m [38;5;28;01mif[39;00m TYPE_CHECKING:
+
+File [1;32m~\miniconda3\Lib\site-packages\bokeh\document\__init__.py:50[0m
+[0;32m     40[0m __all__ [38;5;241m=[39m (
+[0;32m     41[0m     [38;5;124m'[39m[38;5;124mDEFAULT_TITLE[39m[38;5;124m'[39m,
+[0;32m     42[0m     [38;5;124m'[39m[38;5;124mDocument[39m[38;5;124m'[39m,
+[0;32m     43[0m     [38;5;124m'[39m[38;5;124mwithout_document_lock[39m[38;5;124m'[39m,
+[0;32m     44[0m )
+[0;32m     46[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     47[0m [38;5;66;03m# General API[39;00m
+[0;32m     48[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[1;32m---> 50[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mdocument[39;00m [38;5;28;01mimport[39;00m DEFAULT_TITLE ; DEFAULT_TITLE
+[0;32m     51[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mdocument[39;00m [38;5;28;01mimport[39;00m Document ; Document
+[0;32m     52[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mlocking[39;00m [38;5;28;01mimport[39;00m without_document_lock ; without_document_lock
+
+File [1;32m~\miniconda3\Lib\site-packages\bokeh\document\document.py:57[0m
+[0;32m     55[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mhas_props[39;00m [38;5;28;01mimport[39;00m is_DataModel
+[0;32m     56[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mjson_encoder[39;00m [38;5;28;01mimport[39;00m serialize_json
+[1;32m---> 57[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mquery[39;00m [38;5;28;01mimport[39;00m find, is_single_string_selector
+[0;32m     58[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtemplates[39;00m [38;5;28;01mimport[39;00m FILE
+[0;32m     59[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtypes[39;00m [38;5;28;01mimport[39;00m ID, Unknown
+
+File [1;32m~\miniconda3\Lib\site-packages\bokeh\core\query.py:35[0m
+[0;32m     25[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtyping[39;00m [38;5;28;01mimport[39;00m (
+[0;32m     26[0m     Any,
+[0;32m     27[0m     Callable,
+[1;32m   (...)[0m
+[0;32m     31[0m     Union,
+[0;32m     32[0m )
+[0;32m     34[0m [38;5;66;03m# Bokeh imports[39;00m
+[1;32m---> 35[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01mmodel[39;00m [38;5;28;01mimport[39;00m Model
+[0;32m     37[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     38[0m [38;5;66;03m# Globals and constants[39;00m
+[0;32m     39[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     41[0m __all__ [38;5;241m=[39m (
+[0;32m     42[0m     [38;5;124m'[39m[38;5;124mEQ[39m[38;5;124m'[39m,
+[0;32m     43[0m     [38;5;124m'[39m[38;5;124mfind[39m[38;5;124m'[39m,
+[1;32m   (...)[0m
+[0;32m     53[0m     [38;5;124m'[39m[38;5;124mis_single_string_selector[39m[38;5;124m'[39m,
+[0;32m     54[0m )
+
+File [1;32m~\miniconda3\Lib\site-packages\bokeh\model\__init__.py:25[0m
+[0;32m     18[0m log [38;5;241m=[39m logging[38;5;241m.[39mgetLogger([38;5;18m__name__[39m)
+[0;32m     20[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     21[0m [38;5;66;03m# Imports[39;00m
+[0;32m     22[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     23[0m 
+[0;32m     24[0m [38;5;66;03m# Bokeh imports[39;00m
+[1;32m---> 25[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mdata_model[39;00m [38;5;28;01mimport[39;00m DataModel
+[0;32m     26[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mmodel[39;00m [38;5;28;01mimport[39;00m Model
+[0;32m     27[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mutil[39;00m [38;5;28;01mimport[39;00m Qualified, collect_models, get_class
+
+File [1;32m~\miniconda3\Lib\site-packages\bokeh\model\data_model.py:25[0m
+[0;32m     19[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     20[0m [38;5;66;03m# Imports[39;00m
+[0;32m     21[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     22[0m 
+[0;32m     23[0m [38;5;66;03m# Bokeh imports[39;00m
+[0;32m     24[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mhas_props[39;00m [38;5;28;01mimport[39;00m abstract
+[1;32m---> 25[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mmodel[39;00m [38;5;28;01mimport[39;00m Model
+[0;32m     27[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     28[0m [38;5;66;03m# Globals and constants[39;00m
+[0;32m     29[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     31[0m __all__ [38;5;241m=[39m (
+[0;32m     32[0m     [38;5;124m'[39m[38;5;124mDataModel[39m[38;5;124m'[39m,
+[0;32m     33[0m )
+
+File [1;32m~\miniconda3\Lib\site-packages\bokeh\model\model.py:38[0m
+[0;32m     26[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtyping[39;00m [38;5;28;01mimport[39;00m (
+[0;32m     27[0m     TYPE_CHECKING,
+[0;32m     28[0m     Any,
+[1;32m   (...)[0m
+[0;32m     34[0m     Type,
+[0;32m     35[0m )
+[0;32m     37[0m [38;5;66;03m# Bokeh imports[39;00m
+[1;32m---> 38[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m [38;5;28;01mimport[39;00m properties [38;5;28;01mas[39;00m p
+[0;32m     39[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mhas_props[39;00m [38;5;28;01mimport[39;00m HasProps, abstract
+[0;32m     40[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mjson_encoder[39;00m [38;5;28;01mimport[39;00m serialize_json
+
+File [1;32m~\miniconda3\Lib\site-packages\bokeh\core\properties.py:273[0m
+[0;32m    270[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mproperty[39;00m[38;5;21;01m.[39;00m[38;5;21;01many[39;00m [38;5;28;01mimport[39;00m Any; Any
+[0;32m    271[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mproperty[39;00m[38;5;21;01m.[39;00m[38;5;21;01many[39;00m [38;5;28;01mimport[39;00m AnyRef; AnyRef
+[1;32m--> 273[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mproperty[39;00m[38;5;21;01m.[39;00m[38;5;21;01mauto[39;00m [38;5;28;01mimport[39;00m Auto; Auto
+[0;32m    275[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mproperty[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcolor[39;00m [38;5;28;01mimport[39;00m Alpha; Alpha
+[0;32m    276[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mproperty[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcolor[39;00m [38;5;28;01mimport[39;00m Color; Color
+
+File [1;32m~\miniconda3\Lib\site-packages\bokeh\core\property\auto.py:24[0m
+[0;32m     17[0m log [38;5;241m=[39m logging[38;5;241m.[39mgetLogger([38;5;18m__name__[39m)
+[0;32m     19[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     20[0m [38;5;66;03m# Imports[39;00m
+[0;32m     21[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     22[0m 
+[0;32m     23[0m [38;5;66;03m# Bokeh imports[39;00m
+[1;32m---> 24[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01menum[39;00m [38;5;28;01mimport[39;00m Enum
+[0;32m     26[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     27[0m [38;5;66;03m# Globals and constants[39;00m
+[0;32m     28[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     30[0m __all__ [38;5;241m=[39m (
+[0;32m     31[0m     [38;5;124m'[39m[38;5;124mAuto[39m[38;5;124m'[39m,
+[0;32m     32[0m )
+
+File [1;32m~\miniconda3\Lib\site-packages\bokeh\core\property\enum.py:27[0m
+[0;32m     25[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m.[39;00m [38;5;28;01mimport[39;00m enums
+[0;32m     26[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m_sphinx[39;00m [38;5;28;01mimport[39;00m model_link, property_link, register_type_link
+[1;32m---> 27[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mprimitive[39;00m [38;5;28;01mimport[39;00m String
+[0;32m     28[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01msingletons[39;00m [38;5;28;01mimport[39;00m Intrinsic
+[0;32m     30[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+[0;32m     31[0m [38;5;66;03m# Globals and constants[39;00m
+[0;32m     32[0m [38;5;66;03m#-----------------------------------------------------------------------------[39;00m
+
+File [1;32m~\miniconda3\Lib\site-packages\bokeh\core\property\primitive.py:37[0m
+[0;32m     35[0m [38;5;28;01mtry[39;00m:
+[0;32m     36[0m     [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[1;32m---> 37[0m     bokeh_bool_types [38;5;241m+[39m[38;5;241m=[39m ([43mnp[49m[38;5;241;43m.[39;49m[43mbool8[49m,)
+[0;32m     38[0m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m:
+[0;32m     39[0m     [38;5;28;01mpass[39;00m
+
+File [1;32m~\miniconda3\Lib\site-packages\numpy\__init__.py:424[0m, in [0;36m__getattr__[1;34m(attr)[0m
+[0;32m    421[0m     [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mchar[39;00m [38;5;28;01mas[39;00m [38;5;21;01mchar[39;00m
+[0;32m    422[0m     [38;5;28;01mreturn[39;00m char[38;5;241m.[39mchararray
+[1;32m--> 424[0m [38;5;28;01mraise[39;00m [38;5;167;01mAttributeError[39;00m([38;5;124m"[39m[38;5;124mmodule [39m[38;5;132;01m{!r}[39;00m[38;5;124m has no attribute [39m[38;5;124m"[39m
+[0;32m    425[0m                      [38;5;124m"[39m[38;5;132;01m{!r}[39;00m[38;5;124m"[39m[38;5;241m.[39mformat([38;5;18m__name__[39m, attr))
+
+[1;31mAttributeError[0m: module 'numpy' has no attribute 'bool8'
+
